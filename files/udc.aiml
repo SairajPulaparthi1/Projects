@@ -1,7 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-  <category>
-    <pattern>*</pattern>
-    <template>I have no answer for that.</template>
-  </category>
+
+<!-- Greeting -->
+<category>
+  <pattern>HELLO</pattern>
+  <template>Hello! I am your class assistant bot. What is your name?</template>
+</category>
+
+<category>
+  <pattern>HI</pattern>
+  <template>Hi there! What is your name?</template>
+</category>
+
+<!-- Learn name -->
+<category>
+  <pattern>MY NAME IS *</pattern>
+  <template>
+    <set name="username"><star/></set>
+    Nice to meet you, <get name="username"/>! How can I help you today?
+  </template>
+</category>
+
+<!-- Call name later -->
+<category>
+  <pattern>WHAT IS MY NAME</pattern>
+  <template>Your name is <get name="username"/>!</template>
+</category>
+
+<!-- FAQ 1 -->
+<category>
+  <pattern>WHEN IS THE ASSIGNMENT DUE</pattern>
+  <template>The assignment is due this Sunday at 11:59 PM.</template>
+</category>
+
+<!-- FAQ 2 -->
+<category>
+  <pattern>HOW DO I SUBMIT MY WORK</pattern>
+  <template>You can submit your work through Canvas under the assignments tab.</template>
+</category>
+
+<!-- FAQ 3 -->
+<category>
+  <pattern>WHAT IS THIS CLASS ABOUT</pattern>
+  <template>This class focuses on chatbots, AI, and communication technology.</template>
+</category>
+
+<!-- Random response example -->
+<category>
+  <pattern>HOW ARE YOU</pattern>
+  <template>
+    <random>
+      <li>I am doing great!</li>
+      <li>I'm just a bot, but I'm ready to help!</li>
+      <li>Feeling smart today 😄</li>
+    </random>
+  </template>
+</category>
+
+<!-- Default fallback -->
+<category>
+  <pattern>*</pattern>
+  <template>Sorry, I do not understand that yet. Try asking something else!</template>
+</category>
+
 </aiml>
